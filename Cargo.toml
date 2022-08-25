@@ -2,32 +2,32 @@
 name = "sphinx"
 version = "0.1.0"
 authors = ["Ania Piotrowska <ania@nymtech.net>", "Dave Hrycyszyn <futurechimp@users.noreply.github.com>", "Jędrzej Stuczyński <andrew@nymtech.net>"]
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-aes = { version = "0.7.4", features = ["ctr"] }
+aes = {version = "0.8.1"}
+ctr = "0.9.1"
 bs58 = "0.4.0"
-curve25519-dalek = "3.0.0"
-hmac = "0.11.0"
-digest = "0.9"
-log = "0.4"
+curve25519-dalek = "3.2.1"
+hmac = "0.12.1"
+crypto-mac = "0.11.1"
+digest = "0.10.3"
+log = "0.4.17"
 rand = {version = "0.7.3", features = ["wasm-bindgen"]}
 rand_distr = "0.3"
-sha2 = "0.9.1"
-hkdf = "0.11.0"
-lioness = "0.1.2"
-arrayref = "0.3.5"
-chacha = "0.3.0"
-blake2 = "0.8.0" # cannot be updated due to outdated dependency inside lioness
-byteorder = "1.3.2"
-subtle = "2.3.0"
+sha2 = "0.10.2"
+hkdf = "0.12.3"
+lioness = { git = "https://github.com/vnpmid/lioness-rs", rev = "1271d56f5d090849c2ec2ae76541b08bf5c2462d"}
+arrayref = "0.3.6"
+byteorder = "1.4.3"
+subtle = "2.4.1"
 
 
 [dev-dependencies]
-mockall = "0.10.2"
-criterion = "0.3"
+mockall = "0.11.2"
+criterion = "0.3.6"
 
 [[bench]]
 name = "benchmarks"

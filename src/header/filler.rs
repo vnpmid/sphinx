@@ -80,7 +80,7 @@ impl Filler {
         self.value
     }
 
-    pub(crate) fn from_raw(raw_value: Vec<u8>) -> Self {
+    pub fn from_raw(raw_value: Vec<u8>) -> Self {
         Filler { value: raw_value }
     }
 }
